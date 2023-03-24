@@ -39,16 +39,17 @@ int main(int argc, char *argv[])
     {'A','#'},
     {'B',' '},
   };
-int i;
+  
+int num;
 float kVal[12]={-9.0, -8.0, -7.0, -6.0, -5.0, -4.0, -3.0, -2.0, -1.0, 0.0, 1, 2};
 
 printf(" 12 Sound Scale Table\n");
-printf(" 1 Screen Output. 2 File Output. 3 Both\n\n");
+printf(" 1 Screen Output. 2 File Output. 3 Both\n");
 
-scanf("%d", &i);
+scanf("%d", &num);
 FILE *fp;
 
-switch(i) {
+switch(num) {
   case SCREEN:
     printf("       440Hz     432Hz\n");
     for(int i=0; i<=11; i++)
@@ -93,8 +94,10 @@ switch(i) {
     printf("File save complete.\n");
     break;
 
-  default: break;
-}
+  default: 
+    printf("Enter a number between 1 and 3\n");
+    break;
+  }
 
 return 0;
 }
